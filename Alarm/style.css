@@ -1,0 +1,2 @@
+.slider .axis { -fx-tick-label-fill: white; }
+.togglebutton:selected { -fx-background-color: white;}

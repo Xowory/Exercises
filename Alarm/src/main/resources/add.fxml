@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="475.0" prefWidth="400.0" spacing="20" style="-fx-background-color: #5c5a5a;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Add_controller">
+    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+   <GridPane prefHeight="467.0" prefWidth="360.0">
+     <columnConstraints>
+       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="170.4" minWidth="10.0" prefWidth="150.0" />
+       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.40000762939454" minWidth="10.0" prefWidth="56.19999999999999" />
+         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="150.0" />
+     </columnConstraints>
+     <rowConstraints>
+         <RowConstraints maxHeight="184.0" minHeight="10.0" prefHeight="179.2" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="95.4" minHeight="10.0" prefHeight="35.599999999999994" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+           <Label text="Powtarzaj" textFill="WHITE" GridPane.rowIndex="2" />
+           <Label text="Głośność alarmu" textFill="WHITE" GridPane.rowIndex="3" />
+           <Label prefWidth="76.0" text="Etykieta" textFill="WHITE" GridPane.rowIndex="4" />
+         <CheckBox fx:id="rpt" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></CheckBox>
+         <Slider fx:id="slider" minorTickCount="5" showTickMarks="true" value="100.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Slider>
+           <TextField fx:id="textField" promptText="Wprowadź etykietę..." GridPane.columnIndex="2" GridPane.rowIndex="4" />
+           <Button fx:id="zapisz" onAction="#save" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #6684F9;" text="Zapisz" textFill="WHITE" GridPane.rowIndex="5">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
+           <Button fx:id="anuluj" alignment="CENTER" onAction="#close" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #6684F9;" text="Anuluj" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="5">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
+         <HBox alignment="CENTER" prefHeight="51.0" prefWidth="160.0" spacing="20" GridPane.rowIndex="1">
+            <children>
+               <ToggleButton fx:id="pn" mnemonicParsing="false" text="Pn" />
+               <ToggleButton fx:id="wt" mnemonicParsing="false" text="Wt" />
+               <ToggleButton fx:id="sr" mnemonicParsing="false" text="Sr" />
+            </children></HBox>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="17" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <children>
+               <ToggleButton fx:id="czw" mnemonicParsing="false" text="Czw" />
+            </children></HBox>
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Label fx:id="g_m" onMouseClicked="#g_minus" text="23">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+                  <font>
+                     <Font size="36.0" />
+                  </font></Label>
+               <Label fx:id="godziny" text="00" textFill="WHITE">
+                  <cursor>
+                     <Cursor fx:constant="DEFAULT" />
+                  </cursor>
+                  <font>
+                     <Font size="48.0" />
+                  </font></Label>
+               <Label fx:id="g_p" onMouseClicked="#g_plus" text="01">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+                  <font>
+                     <Font size="36.0" />
+                  </font></Label>
+            </children>
+         </VBox>
+         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+            <children>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <Label fx:id="m_m" onMouseClicked="#m_minus" text="59">
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <font>
+                           <Font size="36.0" />
+                        </font></Label>
+                     <Label fx:id="minuty" text="00" textFill="WHITE">
+                        <font>
+                           <Font size="48.0" />
+                        </font></Label>
+                     <Label fx:id="m_p" onMouseClicked="#m_plus" text="01">
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <font>
+                           <Font size="36.0" />
+                        </font></Label>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <children>
+               <ToggleButton fx:id="pt" mnemonicParsing="false" text="Pt" />
+               <ToggleButton fx:id="sb" mnemonicParsing="false" text="Sb" textFill="BLUE" />
+               <ToggleButton fx:id="nd" mnemonicParsing="false" text="Nd" textFill="RED" />
+            </children>
+         </HBox>
+         <Label text=":" textFill="WHITE" GridPane.columnIndex="1">
+            <font>
+               <Font size="48.0" />
+            </font></Label>
+      </children>
+   </GridPane>
+</VBox>
